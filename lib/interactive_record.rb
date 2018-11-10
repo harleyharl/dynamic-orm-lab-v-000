@@ -63,7 +63,7 @@ class InteractiveRecord
     attributes.collect do |attribute_name, attribute_value|
       # binding.pry
       sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_name} = '#{attribute_value}'"
-      DB[:conn].execute(sql)
+      DB[:conn].execute(sql)[0]
     end
   end
 
