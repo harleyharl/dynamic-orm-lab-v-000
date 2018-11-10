@@ -20,4 +20,8 @@ class InteractiveRecord
     column_names.compact
   end
 
+  def initialize(attributes_hash)
+
+  end
+
 end
