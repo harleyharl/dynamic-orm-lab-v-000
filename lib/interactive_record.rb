@@ -62,10 +62,8 @@ class InteractiveRecord
 
     attributes.each do |attribute_name, attribute_value|
       # binding.pry
-      sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_name} = #{attribute_value}"
+      sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_name} = '#{attribute_value}'"
       DB[:conn].execute(sql)
-      # attribute_name.to_s == (attribute_name)
-      # attribute_value.to_s.include?(attribute_value)
     end
   end
 
