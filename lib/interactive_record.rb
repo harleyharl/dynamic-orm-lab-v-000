@@ -60,7 +60,7 @@ class InteractiveRecord
     # #returns a row
     # sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_name}"
 
-    attributes.each do |attribute_name, attribute_value|
+    attributes.tap do |attribute_name, attribute_value|
       # binding.pry
       sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_name} = '#{attribute_value}'"
       DB[:conn].execute(sql)
