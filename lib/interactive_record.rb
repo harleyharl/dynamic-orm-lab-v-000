@@ -59,6 +59,11 @@ class InteractiveRecord
     end
     #returns a row
     sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_name}"
+
+    attributes.each do |attribute_name, attribute_value|
+      attribute_name.include?(attribute_name)
+      attribute_value.include?(attribute_value)
+    end
   end
 
 end
