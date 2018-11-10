@@ -55,7 +55,8 @@ class InteractiveRecord
   def self.find_by(attributes={})
     binding.pry
     self.column_names.each do |column_name|
-    end 
+      column_name == attributes.to_s
+    end
     #returns a row
     sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_name}"
   end
